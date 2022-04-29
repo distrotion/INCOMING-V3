@@ -144,3 +144,20 @@ CallDropDownDataS_INCM ZeCallDropdowndata_INCM = CallDropDownDataS_INCM(
   data09: '',
   data10: '',
 );
+
+class INCOMINGmaster {
+  INCOMINGmaster({
+    this.ITEMs = '',
+    this.ITEMsID = '',
+    this.PCS = '',
+    this.FREQUENCY = '',
+    this.RESULTFORMAT = '',
+    this.STATE = '',
+  });
+  String ITEMs;
+  String ITEMsID;
+  String PCS;
+  String FREQUENCY;
+  String RESULTFORMAT;
+  String STATE;
+}

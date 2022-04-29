@@ -4,7 +4,9 @@ class INCOMINGDATArequest {
 }
 
 class INCOMINGDATAactive {
-  static String ItemNow = '';
+  static int ItemNow = 0;
+  static bool modeNOGOOD = false;
+  static String ItemName = '';
   static String statusNow = '';
   static String specialAccStatusNow = '';
   static String specialAccCOMMENTNow = '';
@@ -27,18 +29,29 @@ class INCOMINGDATAoutput {
   static String NAME1now = '';
   static String CUST_LOTnow = '';
   static String PART_NMnow = '';
+  static String PART_NOnow = '';
   static String PROCESSnow = '';
   static String OLDMAT_CPnow = '';
   static String STATUSnow = '';
-  static String UserNO = '';
+  static int UserNO = 0;
   static String ItemNow = '';
   static String ITEMstatusNow = '';
   static String ITEMspecialAccStatusNow = '';
   static String ITEMspecialAccCOMMENTNow = '';
+
+  static String PiecesDropdownSelected = '';
+}
+
+class NOGOODcon {
+  static int NoGoodPage = 1;
+  static String PiecesDropdownSelected = '1';
+  static int yesno = 0;
+  static bool undercontrol = false;
+  static String SpacialAccText = '';
+  static int attper = 0;
   static String base64pic01 = '';
   static String base64pic02 = '';
   static String base64pic03 = '';
   static String base64pic04 = '';
   static String base64pic05 = '';
-  static String PiecesDropdownSelected = '';
 }

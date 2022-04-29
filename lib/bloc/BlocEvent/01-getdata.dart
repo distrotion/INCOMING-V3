@@ -2,9 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 import '../../data/model.dart';
 
-String server = 'http://localhost:10000/';
-// String server = 'http://172.23.10.40:9210/';
-String serverflush = 'http://172.23.10.40:1880/flush';
+// String server = 'http://localhost:10000/';
+String server = 'http://172.23.10.32:14100/';
 //172.23.10.39
 
 /// Event being processed by [CounterBloc].
@@ -26,22 +25,9 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
     on<GetDataPressed>((event, emit) {
       return _getdata([], emit);
     });
-    on<FlushITDataPressed>((event, emit) {
-      return _flushdata([], emit);
-    });
   }
   Future<void> _getdata(
       List<dataset> toAdd, Emitter<List<dataset>> emit) async {
-    // http://localhost:9210/tblSAPGoodReceive_get
-    // final response = await http
-    //     .post(Uri.parse(server + "tblSAPGoodReceive_get"), body: {
-    //   "MATNR": "",
-    //   "CHARG": ""
-    // }, headers: {
-    //   "Accept": "application/json",
-    //   "Access-Control_Allow_Origin": "*"
-    // });
-
     final response = await Dio().post(
       server + "tblSAPGoodReceive_get",
       data: {"MATNR": "", "CHARG": ""},
@@ -95,19 +81,4 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
   }
 
   Future<void> _PostData01(int toAdd, Emitter<int> emit) async {}
-
-  Future<void> _flushdata(
-      List<dataset> toAdd, Emitter<List<dataset>> emit) async {
-    // final response = await http.post(Uri.parse(serverflush), body: {
-    //   "Qurey": "flush"
-    // }, headers: {
-    //   "Accept": "application/json",
-    //   "Access-Control_Allow_Origin": "*"
-    // });
-
-    final response = await Dio().post(
-      serverflush,
-      data: {"Qurey": "flush"},
-    );
-  }
 }

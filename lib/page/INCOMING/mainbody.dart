@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/BlocEvent/01-getdata.dart';
 import '../../bloc/Cubit/Rebuild.dart';
 import '../../data/Base64Img.dart';
 import '../../data/model.dart';
 import '../../widget/common/Loading.dart';
 
+import 'CONSOLEbox/consolemain.dart';
 import 'dummydata.dart';
 import 'incomingvar.dart';
 
@@ -16,13 +18,31 @@ String _searchResult = '';
 
 class MainTableBody extends StatelessWidget {
   /// {@macro counter_page}
-  const MainTableBody({Key? key}) : super(key: key);
-
+  MainTableBody({Key? key, this.data}) : super(key: key);
+  List<dataset>? data;
   @override
   Widget build(BuildContext context) {
-    return TableBody(
-      data: data_test,
+    return TableBodyRebuild(
+      data: data,
     );
+  }
+}
+
+class TableBodyRebuild extends StatelessWidget {
+  TableBodyRebuild({Key? key, this.data}) : super(key: key);
+  List<dataset>? data;
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<BlocPageRebuild>(
+            create: (BuildContext context) =>
+                BlocPageRebuild(), //For rebuild only page inside without app bar/left menu
+          ),
+        ],
+        child: TableBody(
+          data: data,
+        ));
   }
 }
 
@@ -44,7 +64,7 @@ class _TableBodyState extends State<TableBody> {
   @override
   void initState() {
     super.initState();
-    // context.read<DataSetBloc>().add(GetDataPressed());
+    context.read<DataSetBloc>().add(GetDataPressed());
     // context.read<DropDownData_INCM_Bloc>().add(DropDownData_INCM_Pressed());
   }
 
@@ -91,13 +111,6 @@ class _TableBodyState extends State<TableBody> {
           width: 1200,
           child: Column(
             children: [
-              // FloatingActionButton(
-              //   child: const Icon(Icons.add),
-              //   onPressed: () {
-              //     print("hi bloc");
-              //     context.read<DataSetBloc>().add(GetDataPressed());
-              //   },
-              // ),
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.search),
@@ -106,19 +119,15 @@ class _TableBodyState extends State<TableBody> {
                       decoration: const InputDecoration(
                           hintText: 'Search', border: InputBorder.none),
                       onChanged: (value) {
-                        // setState(() {
-                        //   _searchResult = value;
-                        // });
                         _searchResult = value;
                         BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
                       }),
                   trailing: IconButton(
                     icon: const Icon(Icons.cancel),
                     onPressed: () {
-                      setState(() {
-                        controller.clear();
-                        _searchResult = '';
-                      });
+                      controller.clear();
+                      _searchResult = '';
+                      BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
                     },
                   ),
                 ),
@@ -143,6 +152,7 @@ class _TableBodyState extends State<TableBody> {
                                     // context
                                     //     .read<DataSetBloc>()
                                     //     .add(FlushITDataPressed()),
+
                                     );
                               },
                               style: ButtonStyle(
@@ -311,11 +321,28 @@ class MyData extends DataTableSource {
 
           //-----------
 
-          INCOMINGDATAoutput.base64pic01 = imgw;
-          INCOMINGDATAoutput.base64pic02 = imgw;
-          INCOMINGDATAoutput.base64pic03 = imgw;
-          INCOMINGDATAoutput.base64pic04 = imgw;
-          INCOMINGDATAoutput.base64pic05 = imgw;
+          INCOMINGDATAactive.ItemNow = 0;
+          INCOMINGDATAactive.modeNOGOOD = false;
+          INCOMINGDATAactive.ItemName = '';
+          INCOMINGDATAactive.statusNow = '';
+          INCOMINGDATAactive.specialAccStatusNow = '';
+          INCOMINGDATAactive.specialAccCOMMENTNow = '';
+          INCOMINGDATAactive.specialAccPicNow = '';
+          INCOMINGDATAactive.confirmPass = '';
+          INCOMINGDATAactive.wait = '';
+          INCOMINGDATAactive.PassText = '';
+
+          NOGOODcon.NoGoodPage = 1;
+          NOGOODcon.PiecesDropdownSelected = '1';
+          NOGOODcon.yesno = 0;
+          NOGOODcon.undercontrol = false;
+          NOGOODcon.SpacialAccText = '';
+          NOGOODcon.attper = 0;
+          NOGOODcon.base64pic01 = imgw;
+          NOGOODcon.base64pic02 = imgw;
+          NOGOODcon.base64pic03 = imgw;
+          NOGOODcon.base64pic04 = imgw;
+          NOGOODcon.base64pic05 = imgw;
 
           //-----------
           // _selectedCount += value! ? 1 : -1;
@@ -331,6 +358,8 @@ class MyData extends DataTableSource {
           //     //     .add(DropDownData_INCM_Pressed()),
           //     // ConsoleBox(data, _list01),
           //     );
+
+          ConsoleBoxBODY(data, _list01);
           notifyListeners();
         },
         cells: [
