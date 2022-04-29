@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/BlocEvent/01-getdata.dart';
+import '../bloc/BlocEvent/04-flushfromsap.dart';
 import '../data/model.dart';
 import 'INCOMING/mainbody.dart';
 
@@ -12,7 +13,23 @@ class Page1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Page1BlocBody();
+    return Page1BlocBodyLUSHsap();
+  }
+}
+
+class Page1BlocBodyLUSHsap extends StatelessWidget {
+  /// {@macro counter_page}
+  const Page1BlocBodyLUSHsap({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+        create: (_) => DataSetBloc(),
+        child: BlocBuilder<FLUSHsap_Bloc, int>(
+          builder: (context, non) {
+            return Page1BlocBody();
+          },
+        ));
   }
 }
 

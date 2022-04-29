@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/BlocEvent/01-getdata.dart';
+import '../../bloc/BlocEvent/04-flushfromsap.dart';
 import '../../bloc/Cubit/Rebuild.dart';
 import '../../data/Base64Img.dart';
 import '../../data/model.dart';
@@ -148,12 +149,10 @@ class _TableBodyState extends State<TableBody> {
                           children: [
                             ElevatedButton(
                               onPressed: () {
-                                onLoadingType02(context, () {}
-                                    // context
-                                    //     .read<DataSetBloc>()
-                                    //     .add(FlushITDataPressed()),
-
-                                    );
+                                context
+                                    .read<DataSetBloc>()
+                                    .add(GetDataPressed());
+                                onLoadingType02(context, () {});
                               },
                               style: ButtonStyle(
                                 backgroundColor:
@@ -166,11 +165,10 @@ class _TableBodyState extends State<TableBody> {
                             ),
                             ElevatedButton(
                               onPressed: () {
-                                onLoadingType02(context, () {}
-                                    // context
-                                    //     .read<DataSetBloc>()
-                                    //     .add(GetDataPressed()),
-                                    );
+                                context
+                                    .read<FLUSHsap_Bloc>()
+                                    .add(FLUSHsap_Pressed_01());
+                                onLoadingType02(context, () {});
                               },
                               child: const Icon(
                                 Icons.refresh,

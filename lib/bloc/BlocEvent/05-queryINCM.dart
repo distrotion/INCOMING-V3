@@ -5,8 +5,8 @@ import '../../page/INCOMING/incomingvar.dart';
 
 //-------------------------------------------------
 
-String server = 'http://localhost:14100/';
-// String server = 'http://172.23.10.32:14100/';
+// String server = 'http://localhost:14100/';
+String server = 'http://172.23.10.32:14100/';
 
 abstract class QUERYincm_Event {}
 
