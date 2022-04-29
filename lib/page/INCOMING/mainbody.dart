@@ -150,8 +150,10 @@ class _TableBodyState extends State<TableBody> {
                             ElevatedButton(
                               onPressed: () {
                                 context
-                                    .read<DataSetBloc>()
-                                    .add(GetDataPressed());
+                                    .read<FLUSHsap_Bloc>()
+                                    .add(FLUSHsap_Pressed_01());
+                                BlocProvider.of<BlocPageRebuild>(context)
+                                    .rebuildPage();
                                 onLoadingType02(context, () {});
                               },
                               style: ButtonStyle(
@@ -166,8 +168,10 @@ class _TableBodyState extends State<TableBody> {
                             ElevatedButton(
                               onPressed: () {
                                 context
-                                    .read<FLUSHsap_Bloc>()
-                                    .add(FLUSHsap_Pressed_01());
+                                    .read<DataSetBloc>()
+                                    .add(GetDataPressed());
+                                BlocProvider.of<BlocPageRebuild>(context)
+                                    .rebuildPage();
                                 onLoadingType02(context, () {});
                               },
                               child: const Icon(

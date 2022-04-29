@@ -66,8 +66,8 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
           f22: data_input[i]['PROCESS'].toString(),
           f23: data_input[i]['OLDMAT_CP'].toString(),
           f24: data_input[i]['STATUS'].toString(),
-          f25: data_input[i]['Appearance_for_Rust_status'].toString(),
-          f26: data_input[i]['Appearance_for_Scratch_status'].toString(),
+          f25: data_input[i]['Appearance for rust_status'].toString(),
+          f26: data_input[i]['Appearance for scratch_status'].toString(),
         ));
       }
       //stateoutput = data_test

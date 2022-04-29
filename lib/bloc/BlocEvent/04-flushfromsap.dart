@@ -22,6 +22,8 @@ class FLUSHsap_Bloc extends Bloc<FLUSHsap_Event, int> {
       data: {"Qurey": "flush"},
     );
 
+    print("FULSH");
+
     emit(0);
   }
 }
