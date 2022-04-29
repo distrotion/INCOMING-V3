@@ -1,7 +1,7 @@
-class INCOMINGDATArequest {
-  static String MATNRnow = '';
-  static String CHARGnow = '';
-}
+// class INCOMINGDATArequest {
+//   static String MATNRnow = '';
+//   static String CHARGnow = '';
+// }
 
 class INCOMINGDATAactive {
   static int ItemNow = 0;

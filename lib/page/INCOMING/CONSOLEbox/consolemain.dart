@@ -590,9 +590,9 @@ class ReportButton extends StatelessWidget {
         child: const Text('Report'),
         onPressed: () {
           // contexttable.read<Report_Bloc>().add(CreateReport());
-          // js.context.callMethod('open', [
-          //   'http://172.20.30.46/ReportServer?%2fReport+Project4%2fincomming-v1&rs:Format=PDF&rs:Command=Render&T1=${MATNRnow}-${CHARGnow}'
-          // ]);
+          js.context.callMethod('open', [
+            'http://172.20.30.46/ReportServer?%2fReport+Project4%2fincomming-v1&rs:Format=PDF&rs:Command=Render&T1=${INCOMINGDATAoutput.MATNRnow}-${INCOMINGDATAoutput.CHARGnow}'
+          ]);
           // print(
           //     'http://172.20.30.46/ReportServer?%2fReport+Project4%2fincomming-v1&rs:Format=PDF&rs:Command=Render&T1=${MATNRnow}-${CHARGnow}');
         },
