@@ -1,4 +1,4 @@
-import '../../data/model.dart';
+import '../../model/model.dart';
 
 List<dataset> data_test = <dataset>[
   dataset(

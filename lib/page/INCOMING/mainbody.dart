@@ -5,7 +5,7 @@ import '../../bloc/BlocEvent/01-getdata.dart';
 import '../../bloc/BlocEvent/04-flushfromsap.dart';
 import '../../bloc/Cubit/Rebuild.dart';
 import '../../data/Base64Img.dart';
-import '../../data/model.dart';
+import '../../model/model.dart';
 import '../../widget/common/Loading.dart';
 
 import 'CONSOLEbox/consolemain.dart';
@@ -34,24 +34,6 @@ class TableBodyRebuild extends StatelessWidget {
   List<dataset>? data;
   @override
   Widget build(BuildContext context) {
-    List<dataset> datain = data ?? [];
-    if (_searchResult != '') {
-      List<dataset> _data_exp = [];
-
-      for (int i = 0; i < datain.length; i++) {
-        if (datain[i].f01.toLowerCase().contains(_searchResult) ||
-            datain[i].f02.toLowerCase().contains(_searchResult) ||
-            datain[i].f03.toLowerCase().contains(_searchResult) ||
-            datain[i].f04.toLowerCase().contains(_searchResult) ||
-            datain[i].f05.toLowerCase().contains(_searchResult) ||
-            datain[i].f06.toLowerCase().contains(_searchResult)) {
-          _data_exp.add(datain[i]);
-        }
-      }
-
-      datain = _data_exp;
-    }
-
     return MultiBlocProvider(
         providers: [
           BlocProvider<BlocPageRebuild>(
@@ -60,7 +42,7 @@ class TableBodyRebuild extends StatelessWidget {
           ),
         ],
         child: TableBody(
-          data: datain,
+          data: data,
         ));
   }
 }

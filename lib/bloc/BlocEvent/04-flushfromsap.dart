@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 
+import '../../data/global.dart';
+
 //-------------------------------------------------
-String serverflush = 'http://172.23.10.40:1880/flush';
+String serverflush = Gflashserver;
 
 abstract class FLUSHsap_Event {}
 

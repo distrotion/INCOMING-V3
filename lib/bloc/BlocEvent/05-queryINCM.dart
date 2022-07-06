@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
-import '../../data/model.dart';
+import '../../data/global.dart';
+import '../../model/model.dart';
 import '../../page/INCOMING/incomingvar.dart';
 
 //-------------------------------------------------
 
-// String server = 'http://localhost:14100/';
-String server = 'http://172.23.10.32:14100/';
+String server = Gmainserver;
 
 abstract class QUERYincm_Event {}
 

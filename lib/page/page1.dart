@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/BlocEvent/01-getdata.dart';
 import '../bloc/BlocEvent/04-flushfromsap.dart';
-import '../data/model.dart';
+import '../model/model.dart';
 import 'INCOMING/mainbody.dart';
 
 //---------------------------------------------------------

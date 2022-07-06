@@ -1,9 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
-import '../../data/model.dart';
+import '../../data/global.dart';
+import '../../model/model.dart';
 
 // String server = 'http://localhost:10000/';
-String server = 'http://172.23.10.32:14100/';
+String server = Gmainserver;
 //172.23.10.39
 
 /// Event being processed by [CounterBloc].

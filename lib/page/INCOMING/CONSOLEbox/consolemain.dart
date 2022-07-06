@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../bloc/BlocEvent/05-queryINCM.dart';
 import '../../../bloc/Cubit/Rebuild.dart';
 import '../../../data/Base64Img.dart';
-import '../../../data/model.dart';
+import '../../../model/model.dart';
 import '../../../styles/TextStyle.dart';
 import '../incomingvar.dart';
 import '../mainbody.dart';
