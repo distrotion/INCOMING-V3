@@ -154,7 +154,7 @@ class _TableBodyState extends State<TableBody> {
                                     .add(FLUSHsap_Pressed_01());
                                 BlocProvider.of<BlocPageRebuild>(context)
                                     .rebuildPage();
-                                onLoadingType02(context, () {});
+                                // onLoadingType02(context, () {});
                               },
                               style: ButtonStyle(
                                 backgroundColor:
@@ -172,7 +172,7 @@ class _TableBodyState extends State<TableBody> {
                                     .add(GetDataPressed());
                                 BlocProvider.of<BlocPageRebuild>(context)
                                     .rebuildPage();
-                                onLoadingType02(context, () {});
+                                // onLoadingType02(context, () {});
                               },
                               child: const Icon(
                                 Icons.refresh,

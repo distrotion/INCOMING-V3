@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 
 import '../../data/global.dart';
+import '../../page/INCOMING/mainbody.dart';
+import '../../widget/common/Loading.dart';
 
 //-------------------------------------------------
 String serverflush = Gflashserver;
@@ -19,12 +22,14 @@ class FLUSHsap_Bloc extends Bloc<FLUSHsap_Event, int> {
     });
   }
   Future<void> _flushdata(int toAdd, Emitter<int> emit) async {
+    FreeLoading(maintablecontext);
     final response = await Dio().post(
       serverflush,
       data: {"Qurey": "flush"},
     );
 
     print("FULSH");
+    Navigator.pop(maintablecontext);
 
     emit(0);
   }

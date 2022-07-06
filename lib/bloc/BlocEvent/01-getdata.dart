@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
 import '../../data/global.dart';
 import '../../model/model.dart';
+import '../../page/INCOMING/mainbody.dart';
+import '../../widget/common/Loading.dart';
 
 // String server = 'http://localhost:10000/';
 String server = Gmainserver;
@@ -29,6 +32,7 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
   }
   Future<void> _getdata(
       List<dataset> toAdd, Emitter<List<dataset>> emit) async {
+    FreeLoading(maintablecontext);
     final response = await Dio().post(
       server + "tblSAPGoodReceive_get",
       data: {"MATNR": "", "CHARG": ""},
@@ -37,6 +41,7 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
     var data_input = [];
     List<dataset> stateoutput = [];
     if (response.statusCode == 200) {
+      Navigator.pop(maintablecontext);
       // var databuff = jsonDecode(response.body);
       var databuff = response.data;
       data_input = databuff[0]['output'];
@@ -74,6 +79,7 @@ class DataSetBloc extends Bloc<DataSetEvent, List<dataset>> {
       //stateoutput = data_test
       emit(stateoutput);
     } else {
+      Navigator.pop(maintablecontext);
       print("where is my server");
       //stateoutput = data_test
       stateoutput = [];
