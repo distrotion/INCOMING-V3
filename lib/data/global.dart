@@ -25,6 +25,14 @@ class logindata {
   static String userPASS = '';
 }
 
-String Gmainserver = 'http://172.23.10.32:14100/';
+//-----------------------------------------------------------GAS BP12
 // String Gmainserver = 'http://127.0.0.1:14100/';
+String Gmainserver = 'http://172.23.10.32:14100/';
 String Gflashserver = 'http://172.23.10.40:1880/flush';
+//-----------------------------------------------------------GAS BP12
+//-----------------------------------------------------------GAS GW
+// String Gmainserver = 'http://127.0.0.1:14110/';
+// String Gmainserver = 'http://172.23.10.40:14110/';
+// String Gflashserver = 'http://172.23.10.40:1880/flushGW';
+//-----------------------------------------------------------GAS GW
+

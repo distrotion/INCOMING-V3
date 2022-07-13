@@ -98,10 +98,12 @@ class ConsoleBloc extends StatelessWidget {
   List<INCOMINGmaster>? dataBLOC;
   @override
   Widget build(BuildContext context) {
-    return ConsoleWidget(
-      data: data,
-      list01: list01,
-      dataBLOC: dataBLOC,
+    return SingleChildScrollView(
+      child: ConsoleWidget(
+        data: data,
+        list01: list01,
+        dataBLOC: dataBLOC,
+      ),
     );
   }
 }
