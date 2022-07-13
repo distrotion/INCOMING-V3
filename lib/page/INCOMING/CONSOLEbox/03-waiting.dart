@@ -23,20 +23,19 @@ class WattingItem extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(width: 2.0, color: Colors.black),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
-                              color: Colors.white,
-                            ),
-                            child: Center(child: Text("Check")),
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 2.0, color: Colors.black),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            color: Colors.white,
                           ),
-                        )),
+                          child: Center(child: Text("Check")),
+                        ),
+                      ),
+                    ),
                     Expanded(
                         flex: 1,
                         child: Padding(
@@ -68,20 +67,19 @@ class WattingItem extends StatelessWidget {
                           ),
                         )),
                     Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(width: 2.0, color: Colors.black),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8)),
-                              color: Colors.yellow,
-                            ),
-                            child: Center(child: Text("WAIT")),
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(width: 2.0, color: Colors.black),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            color: Colors.yellow,
                           ),
-                        ))
+                          child: const Center(child: Text("WAIT")),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -98,7 +96,7 @@ class WattingItem extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                   color: Colors.white,
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Has custommer confirmed ?"),
                 )),
           ),
@@ -126,7 +124,7 @@ class WattingItem extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(8)),
                           color: Colors.green,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text("CONFIRM"),
                         )),
                   ),
@@ -146,10 +144,11 @@ class WattingItem extends StatelessWidget {
                         // color: Colors.red,
                         decoration: BoxDecoration(
                           border: Border.all(width: 2.0, color: Colors.black),
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8)),
                           color: Colors.red,
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text("NO"),
                         )),
                   ),

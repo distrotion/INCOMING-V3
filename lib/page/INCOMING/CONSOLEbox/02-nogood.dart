@@ -199,7 +199,7 @@ class WaittingP1 extends StatelessWidget {
                               : Colors.white,
                         ),
                         child: Center(
-                          child: Text("Perchase",
+                          child: Text("Purchase",
                               style: NOGOODcon.attper == 2
                                   ? const TxtStyleBlackBG()
                                   : const TxtStyleWhiteBG()),
@@ -386,8 +386,8 @@ class FileUploadButton01 extends StatelessWidget {
         if (picked != null) {
           imageByte = picked.files.first.bytes;
           IMG.Image? img = IMG.decodeImage(imageByte!);
-          // IMG.Image? img2 = IMG.copyResize(img!, width: 500);
-          resizedData = IMG.encodeJpg(img!) as Uint8List?;
+          IMG.Image? img2 = IMG.copyResize(img!, width: 1280, height: 720);
+          resizedData = IMG.encodeJpg(img2) as Uint8List?;
           NOGOODcon.base64pic01 = base64.encode(resizedData!);
           BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
         }
@@ -411,8 +411,8 @@ class FileUploadButton02 extends StatelessWidget {
         if (picked != null) {
           imageByte = picked.files.first.bytes;
           IMG.Image? img = IMG.decodeImage(imageByte!);
-          // IMG.Image? img2 = IMG.copyResize(img!, width: 500);
-          resizedData = IMG.encodeJpg(img!) as Uint8List?;
+          IMG.Image? img2 = IMG.copyResize(img!, width: 1280, height: 720);
+          resizedData = IMG.encodeJpg(img2) as Uint8List?;
           NOGOODcon.base64pic02 = base64.encode(resizedData!);
           BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
         }
@@ -436,8 +436,8 @@ class FileUploadButton03 extends StatelessWidget {
         if (picked != null) {
           imageByte = picked.files.first.bytes;
           IMG.Image? img = IMG.decodeImage(imageByte!);
-          // IMG.Image? img2 = IMG.copyResize(img!, width: 500);
-          resizedData = IMG.encodeJpg(img!) as Uint8List?;
+          IMG.Image? img2 = IMG.copyResize(img!, width: 1280, height: 720);
+          resizedData = IMG.encodeJpg(img2) as Uint8List?;
           NOGOODcon.base64pic03 = base64.encode(resizedData!);
           BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
         }
@@ -461,8 +461,8 @@ class FileUploadButton04 extends StatelessWidget {
         if (picked != null) {
           imageByte = picked.files.first.bytes;
           IMG.Image? img = IMG.decodeImage(imageByte!);
-          // IMG.Image? img2 = IMG.copyResize(img!, width: 500);
-          resizedData = IMG.encodeJpg(img!) as Uint8List?;
+          IMG.Image? img2 = IMG.copyResize(img!, width: 1280, height: 720);
+          resizedData = IMG.encodeJpg(img2) as Uint8List?;
           NOGOODcon.base64pic04 = base64.encode(resizedData!);
           BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
         }
@@ -486,8 +486,8 @@ class FileUploadButton05 extends StatelessWidget {
         if (picked != null) {
           imageByte = picked.files.first.bytes;
           IMG.Image? img = IMG.decodeImage(imageByte!);
-          // IMG.Image? img2 = IMG.copyResize(img!, width: 500);
-          resizedData = IMG.encodeJpg(img!) as Uint8List?;
+          IMG.Image? img2 = IMG.copyResize(img!, width: 1280, height: 720);
+          resizedData = IMG.encodeJpg(img2) as Uint8List?;
           NOGOODcon.base64pic05 = base64.encode(resizedData!);
           BlocProvider.of<BlocPageRebuild>(context).rebuildPage();
         }

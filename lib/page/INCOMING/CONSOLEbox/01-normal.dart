@@ -114,7 +114,7 @@ class NormalCheck extends StatelessWidget {
               Expanded(
                   flex: 3,
                   child: Padding(
-                    padding: EdgeInsetsDirectional.only(
+                    padding: const EdgeInsetsDirectional.only(
                         start: 15, end: 5, top: 10, bottom: 10),
                     child: InkWell(
                       onTap: () {
@@ -139,7 +139,7 @@ class NormalCheck extends StatelessWidget {
               Expanded(
                   flex: 2,
                   child: Padding(
-                    padding: EdgeInsetsDirectional.only(
+                    padding: const EdgeInsetsDirectional.only(
                         start: 5, end: 15, top: 10, bottom: 10),
                     child: InkWell(
                       onTap: () {
